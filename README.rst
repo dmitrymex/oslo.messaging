@@ -1,7 +1,7 @@
-Oslo Messaging Library
-======================
+Oslo Messaging Library with Marconi driver
+==========================================
 
-The Oslo messaging API supports RPC and notifications over a number of
-different messaging transports.
+This is a fork of Oslo messaging with support for Marconi as a backend.
+See the latest commit for details.
 
 See also: `Library Documentation <http://docs.openstack.org/developer/oslo.messaging>`_

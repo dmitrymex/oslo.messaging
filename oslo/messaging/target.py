@@ -60,13 +60,16 @@ class Target(object):
     """
 
     def __init__(self, exchange=None, topic=None, namespace=None,
-                 version=None, server=None, fanout=None):
+                 version=None, server=None, fanout=None, token=None,
+                 tenant_id=None):
         self.exchange = exchange
         self.topic = topic
         self.namespace = namespace
         self.version = version
         self.server = server
         self.fanout = fanout
+        self.token = token
+        self.tenant_id = tenant_id
 
     def __call__(self, **kwargs):
         kwargs.setdefault('exchange', self.exchange)
@@ -75,6 +78,9 @@ class Target(object):
         kwargs.setdefault('version', self.version)
         kwargs.setdefault('server', self.server)
         kwargs.setdefault('fanout', self.fanout)
+        kwargs.setdefault('token', self.token)
+        kwargs.setdefault('tenant_id', self.tenant_id)
+
         return Target(**kwargs)
 
     def __eq__(self, other):
